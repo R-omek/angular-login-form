@@ -1,0 +1,76 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    height: 500px;
+    width: 480px;
+    margin: 0 auto;
+    margin-top: 159px;
+    margin-bottom: 272px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35));
+}
+.form__title {
+    font-family: Ubuntu;
+    font-style: Bold;
+    font-size: 30px;
+    line-height: 46px;
+    line-height: 133%;
+    text-align: center;
+    color: #383838;
+}
+.form__inputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.form__inputs input {
+    height: 46px;
+    width: 380px;
+    border-radius: 5px;
+    border: 1px solid #DBDBDB;
+    padding-left: 21px;
+}
+.form__inputs input::placeholder {
+    font-size: 18px;
+}
+.form__inputs__not-robot {
+    width: 101%;
+}
+
+.form__button {
+    font-family: Nunito Sans;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 122px;
+    height: 52px;
+    background: linear-gradient(164.49deg, #00D6CE  0%,
+    #0569FF  100%,
+    #126CF2  100%);
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35));
+    border-top-right-radius: 26px;
+    border-bottom-right-radius: 26px;
+    border-bottom-left-radius: 26px;
+    border: none;
+    color: #FFFFFF;
+}
+.form__button:hover {
+    cursor: pointer;
+}
+.form__button:active{
+    transform: translateY(2px);
+}
+.form__reset-pasw a {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #0085FF;
+    text-decoration: none;
+    border-bottom: 1px solid #0085FF;
+}

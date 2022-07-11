@@ -1,0 +1,19 @@
+.nav__item {
+    display: flex;
+    list-style: none;
+    column-gap: 82.64px;
+    margin-left: 22px;
+}
+.nav__item__lang {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.nav__item__lang-en:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.nav__item__lang-ru:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

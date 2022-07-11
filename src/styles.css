@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Ubuntu:wght@700&display=swap');
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url(./assets\background-img\Login.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

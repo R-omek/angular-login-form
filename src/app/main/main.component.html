@@ -1,0 +1,14 @@
+<main>
+    <form action="" class="form">
+      <h1 class="form__title">{{'login-page.title' | translate}}</h1>
+      <div class="form__inputs">
+        <input [(ngModel)]="dataArray.login" id="form__inputs__login" type="text" placeholder="{{'login-page.login' | translate}}" name="login">
+        <input [(ngModel)]="dataArray.password" id="form__inputs__password" type="password" placeholder="{{'login-page.password' | translate}}" name="password">
+        <img class="form__inputs__not-robot" src="..\assets\not-root-img\VQkCH 1.png" alt="not-robot-image">
+      </div>
+      <button class="form__button" type="submit" (click)="signUp()">{{'login-page.button' | translate}}</button>
+      <div class="form__reset-pasw">
+        <a href="">{{'login-page.forget-pass' | translate}}</a>
+      </div>
+    </form>
+  </main>

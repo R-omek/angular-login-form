@@ -1,0 +1,20 @@
+{
+    "login-page": {
+        "title": "Visit site",
+        "login": "Login",
+        "password": "Password",
+        "button": "Enter",
+        "forget-pass": "Forget password",
+        "footer": "All rights reserved"
+    },
+    "second-page": {
+        "title": "List of users",
+        "login-list": "Login",
+        "password-list": "Password",
+        "login": "Login",
+        "password": "Password",
+        "button1": "Add new user",
+        "button2": "Exit",
+        "footer": "All rights reserved"
+    }
+}
