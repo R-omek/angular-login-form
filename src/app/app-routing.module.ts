@@ -4,8 +4,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { SecondPageComponent } from './second-page/second-page.component';
 
 const routes: Routes = [
-  { path: '', component: LoginPageComponent },
-  { path: 'second-page', component: SecondPageComponent }
+  { path: 'second-page', component: SecondPageComponent },
+  { path: '', component: LoginPageComponent }
+  
   
 ];
 

@@ -1,7 +1,7 @@
-import { Component, OnInit} from '@angular/core';
-import { RouterLink } from '@angular/router';
-import {Location} from '@angular/common'; 
+import { Component, Input, OnInit} from '@angular/core';
 import { ResourceLoader } from '@angular/compiler';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,28 +10,32 @@ import { ResourceLoader } from '@angular/compiler';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent  {
-constructor(private location: Location){}
+constructor(private router: Router){}
+  formGroup: FormGroup
+  formControl: FormControl
 
+  ngOnInit() {
+    this.formGroup = new FormGroup({
+      login: new FormControl('', [Validators.required]),
+      password:new FormControl('', [Validators.required])
+    })
+    
+  }
   
   dataArray: any = []
-  
+  err = false
   signUp = (): void => {
-    console.log(JSON.stringify(this.dataArray.password))
-    console.log(localStorage.getItem(`${this.dataArray.login}`))
     if (localStorage.length === 0){
-      
-
-      this.location.replaceState("/second-page")
-      window.location.reload()
-    
-      localStorage.setItem(`${this.dataArray.login}`, JSON.stringify(this.dataArray.password))
-
-    } else if(`${this.dataArray.login}` in localStorage === true && JSON.stringify(this.dataArray.password) === localStorage.getItem(`${this.dataArray.login}`)) {
-       this.location.replaceState("/second-page")
-       window.location.reload()
+      localStorage.setItem(`${this.formGroup.value.login}`, `${this.formGroup.value.password}`)
+      this.router.navigateByUrl('second-page')
+    } else if(`${this.formGroup.value.login}` in localStorage === true && this.formGroup.value.password === localStorage.getItem(`${this.formGroup.value.login}`)) {
+      this.router.navigateByUrl('second-page')
      } else {
-       alert('Wrong login or password')
-       window.location.reload()
+       this.err = true
+       this.formGroup.setValue({
+        login: '',
+        password: ''
+       })
      }
     
   }
