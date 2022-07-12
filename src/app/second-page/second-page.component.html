@@ -1,7 +1,7 @@
 <app-header></app-header>
 
-  <form action="" class="form">
-    <h1 class="form__title">{{'login-page.title' | translate}}</h1>
+  <form [formGroup]="formGroup" class="form">
+    <h1 class="form__title">{{'second-page.title' | translate}}</h1>
     <div class="form__users-data">
       <div class="form__users-data__titles">
         <h3>{{'second-page.login-list' | translate}}</h3>
@@ -9,16 +9,16 @@
       </div>
       <ul class="form__users-data__list">
         <ul #login class="form__users-data__list__logins">
-
+          <li *ngFor="let login of loginArr">{{login}}</li>
         </ul>
         <ul #password class="form__users-data__list__passwords">
-    
+          <li *ngFor="let password of passwordArr">{{password}}</li>
         </ul>
       </ul>
     </div>
     <div class="form__inputs">
-      <input [(ngModel)]="dataArray.login" type="text" placeholder="{{'second-page.login' | translate}}" name="login">
-      <input [(ngModel)]="dataArray.password" type="password" placeholder="{{'second-page.password' | translate}}" name="password">
+      <input formControlName="login" type="text" placeholder="{{'second-page.login' | translate}}" name="login">
+      <input formControlName="password" type="password" placeholder="{{'second-page.password' | translate}}" name="password">
     </div>
     <button class="form__button-newlog" (click)="addNewUser()">{{'second-page.button1' | translate}}</button>
     <button class="form__button-back" routerLink="">{{'second-page.button2' | translate}}</button>

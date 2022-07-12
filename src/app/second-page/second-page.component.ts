@@ -1,5 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import {Location} from '@angular/common'; 
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
  
@@ -11,35 +12,32 @@ import {Location} from '@angular/common';
 })
 export class SecondPageComponent {
   constructor(private location: Location){}
-
-  @ViewChild('login') login:ElementRef;
-  @ViewChild('password') password:ElementRef;
-
+  loginArr: string[];
+  passwordArr: string[];
   
-  ngAfterViewInit(){
+  
+  formGroup: FormGroup
+  formControl: FormControl
 
+  ngOnInit() {
+    this.formGroup = new FormGroup({
+      login: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
+    })
     this.loginArr = Object.keys(localStorage)
-    this.loginArr.forEach((element: any) => {
-      this.login.nativeElement.innerHTML += `<li class="form__users-data__list__el">${element}</li>`
-    });
     this.passwordArr = Object.values(localStorage)
-    this.passwordArr.forEach((element: any) => {
-      this.password.nativeElement.innerHTML += `<li class="form__users-data__list__el">${element}</li>`
-    });
+  }
 
- }
-  loginArr: any = []
-  passwordArr: any = []
   
-  dataArray: any = []
+
   addNewUser() {
-    
-
-    localStorage.setItem(`${this.dataArray.login}`, JSON.stringify(this.dataArray.password))
-    window.location.reload()
-
-    // this.login.nativeElement.innerHTML += `<li class="form__users-data__list__el">${localStorage.getItem(this.dataArray.login)}</li>`
-    // this.password.nativeElement.innerHTML += `<li class="form__users-data__list__el">${localStorage.getItem(this.dataArray.password)}</li>`
+    localStorage.setItem(`${this.formGroup.value.login}`, `${this.formGroup.value.password}`)
+    this.formGroup.setValue({
+      login: '',
+      password: ''
+     })
+     this.loginArr = Object.keys(localStorage)
+    this.passwordArr = Object.values(localStorage)
   }
   
 }

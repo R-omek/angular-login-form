@@ -22,6 +22,9 @@
     text-align: center;
     color: #383838;
 }
+.err{ 
+    color: red;
+}
 .form__inputs {
     display: flex;
     flex-direction: column;
